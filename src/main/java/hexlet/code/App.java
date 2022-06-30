@@ -26,6 +26,11 @@ class App {
                     Games.gcd(name);
                     break;
                 }
+                case 5 : {
+                    name = Cli.greeting();
+                    Games.progression(name);
+                    break;
+                }
             }
         } while (chioceNumber != 0);
         Cli.bye(name);

@@ -3,7 +3,54 @@ package hexlet.code;
 import java.util.Random;
 public class Games {
 
-    public static int nod(int n1, int n2) {
+    public static void progression(String name) {
+        var text = "";
+        int firstNumber;
+        int addNumber;
+        int resultNumber;
+        int result = 0;
+        String resultText;
+        int countCorrect = 0;
+        final Random random = new Random();
+        System.out.println("What number is missing in the progression?");
+        for (var i = 0; i < 3; i++) {
+            firstNumber = random.nextInt(100);
+            addNumber = Math.abs(random.nextInt(99)) + 1;
+            var progres = new int[10];
+            progres[0] = firstNumber;
+            for (int j = 1; j < 10; j++) {
+                progres[j] = progres[j-1] + addNumber;
+            }
+            resultNumber = random.nextInt(10);
+            result = progres[resultNumber];
+            resultText = Integer.toString(result);
+            System.out.print("Question: ");
+            for (int j = 0; j < 10; j++) {
+                if (j != resultNumber) {
+                    System.out.print(" " + progres[j]);
+                } else {
+                    System.out.print(" ..");
+                }
+            }
+            System.out.println();
+            System.out.print("Your answer: ");
+            text = Cli.getChoiceText();
+            if (text.equals(resultText)) {
+                System.out.println("Correct!");
+                countCorrect++;
+            } else {
+                System.out.println(text + " is wrong answer :(. Correct answer was " + resultText);
+                System.out.println("Let's try again, " + name + "!");
+            }
+        }
+        if (countCorrect == 3) {
+            System.out.println("Congratulations, " + name + "!");
+        } else {
+            System.out.println("Be more attractive, " + name + "!");
+        }
+    }
+
+    public static int nod(int n1, int n2) { // greatest common divisor
         int result = 1;
         int min =  n1 < n2 ? n1 : n2;
         for (int i = min; i > 1; i--) {

@@ -22,6 +22,7 @@ public class Cli {
         System.out.println("2 - Even");
         System.out.println("3 - Calculator");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
     }
@@ -32,13 +33,14 @@ public class Cli {
             ShowGamesList();
             String str = sc.next();
             str = str.trim();
-            if (str.length() ==1 ) {
+            if (str.length() == 1 ) {
                 switch (str.charAt(0)) {
                     case '0' : return 0;
                     case '1' : return 1;
                     case '2' : return 2;
                     case '3' : return 3;
                     case '4' : return 4;
+                    case '5' : return 5;
                 }
             }
             System.out.println("Wrong choice. Be attentive and try again, please.");
