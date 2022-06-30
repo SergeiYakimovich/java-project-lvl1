@@ -21,6 +21,11 @@ class App {
                     Games.calculator(name);
                     break;
                 }
+                case 4 : {
+                    name = Cli.greeting();
+                    Games.gcd(name);
+                    break;
+                }
             }
         } while (chioceNumber != 0);
         Cli.bye(name);

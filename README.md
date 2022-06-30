@@ -5,11 +5,8 @@
 
 ###  Asciinema
 [![asciicast](https://asciinema.org/a/XkGuRI0Fzv7k0UuNESelaBjq5.svg)](https://asciinema.org/a/XkGuRI0Fzv7k0UuNESelaBjq5)
-https://asciinema.org/a/XkGuRI0Fzv7k0UuNESelaBjq5
-<a href="https://asciinema.org/a/XkGuRI0Fzv7k0UuNESelaBjq5" target="_blank"><img src="https://asciinema.org/a/XkGuRI0Fzv7k0UuNESelaBjq5.svg" /></a>
-
 
 [![asciicast](https://asciinema.org/a/Qghj0pUJcNOLJs9kk6E8xEzmL.svg)](https://asciinema.org/a/Qghj0pUJcNOLJs9kk6E8xEzmL)
-https://asciinema.org/a/Qghj0pUJcNOLJs9kk6E8xEzmL
-<a href="https://asciinema.org/a/Qghj0pUJcNOLJs9kk6E8xEzmL" target="_blank"><img src="https://asciinema.org/a/Qghj0pUJcNOLJs9kk6E8xEzmL.svg" /></a>
+
+[![asciicast](https://asciinema.org/a/04Y6WrbejYRLCZHCC45wnfsJV.svg)](https://asciinema.org/a/04Y6WrbejYRLCZHCC45wnfsJV)
 
