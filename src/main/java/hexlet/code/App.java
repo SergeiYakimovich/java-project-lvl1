@@ -1,9 +1,29 @@
 package hexlet.code;
 class App {
     public static void main(String[] args) {
+        var name = "my guest"; // имя игрока
+        int chioceNumber; // выбор игрока
 
-        Cli.getName();
-
+        do {
+          chioceNumber = Cli.getChoiceNumber();
+            switch (chioceNumber) {
+                case 1 : {
+                    name = Cli.greeting();
+                    break;
+                }
+                case 2 : {
+                    name = Cli.greeting();
+                    Games.even(name);
+                    break;
+                }
+                case 3 : {
+                    name = Cli.greeting();
+                    Games.calculator(name);
+                    break;
+                }
+            }
+        } while (chioceNumber != 0);
+        Cli.bye(name);
     }
 
 }
