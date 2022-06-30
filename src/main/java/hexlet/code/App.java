@@ -5,32 +5,32 @@ class App {
         int chioceNumber; // выбор игрока
 
         do {
-          chioceNumber = Cli.getChoiceNumber();
+            chioceNumber = Cli.getChoiceNumber();
             switch (chioceNumber) {
-                case 1 : {
+                case 1 :
                     name = Cli.greeting();
                     break;
-                }
-                case 2 : {
+                case 2 :
                     name = Cli.greeting();
                     Games.even(name);
                     break;
-                }
-                case 3 : {
+                case 3 :
                     name = Cli.greeting();
                     Games.calculator(name);
                     break;
-                }
-                case 4 : {
+                case 4 :
                     name = Cli.greeting();
                     Games.gcd(name);
                     break;
-                }
-                case 5 : {
+                case 5 :
                     name = Cli.greeting();
                     Games.progression(name);
                     break;
-                }
+                case 6 :
+                    name = Cli.greeting();
+                    Games.prime(name);
+                    break;
+                default : break;
             }
         } while (chioceNumber != 0);
         Cli.bye(name);

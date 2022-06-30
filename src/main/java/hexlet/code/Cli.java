@@ -16,13 +16,14 @@ public class Cli {
         System.out.println("Thanks for playing Brain Games!");
     }
 
-    public static void ShowGamesList() {
+    public static void showGamesList() {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calculator");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
     }
@@ -30,10 +31,10 @@ public class Cli {
     public static int getChoiceNumber() {
         Scanner sc = new Scanner(System.in);
         do {
-            ShowGamesList();
+            showGamesList();
             String str = sc.next();
             str = str.trim();
-            if (str.length() == 1 ) {
+            if (str.length() == 1) {
                 switch (str.charAt(0)) {
                     case '0' : return 0;
                     case '1' : return 1;
@@ -41,6 +42,8 @@ public class Cli {
                     case '3' : return 3;
                     case '4' : return 4;
                     case '5' : return 5;
+                    case '6' : return 6;
+                    default : break;
                 }
             }
             System.out.println("Wrong choice. Be attentive and try again, please.");
