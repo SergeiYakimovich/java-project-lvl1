@@ -3,7 +3,10 @@ class App {
     public static void main(String[] args) {
         var name = "my guest"; // имя игрока
         int chioceNumber; // выбор игрока
-
+        final int three = 3;
+        final int four = 4;
+        final int five = 5;
+        final int six = 6;
         do {
             chioceNumber = Cli.getChoiceNumber();
             switch (chioceNumber) {
@@ -12,23 +15,23 @@ class App {
                     break;
                 case 2 :
                     name = Cli.greeting();
-                    Games.even(name);
+                    EvenGames.even(name);
                     break;
-                case 3 :
+                case three :
                     name = Cli.greeting();
-                    Games.calculator(name);
+                    CalculatorGames.calculator(name);
                     break;
-                case 4 :
+                case four :
                     name = Cli.greeting();
-                    Games.gcd(name);
+                    GcdGames.gcd(name);
                     break;
-                case 5 :
+                case five :
                     name = Cli.greeting();
-                    Games.progression(name);
+                    ProgressionGames.progression(name);
                     break;
-                case 6 :
+                case six :
                     name = Cli.greeting();
-                    Games.prime(name);
+                    PrimeGames.prime(name);
                     break;
                 default : break;
             }
