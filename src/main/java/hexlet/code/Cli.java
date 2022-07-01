@@ -48,11 +48,13 @@ public class Cli {
                     case '4' : return four;
                     case '5' : return five;
                     case '6' : return six;
-                    default : break;
+                    default : return 0;
                 }
+            } else {
+                return 0;
             }
             // System.out.println("Wrong choice. Be attentive and try again, please.");
-        } while (true);
+        } while (false);
     }
 
     public static String getChoiceText() {
