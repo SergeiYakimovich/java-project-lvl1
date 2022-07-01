@@ -27,7 +27,7 @@ public class ProgressionGames {
             resultNumber = random.nextInt(progresSize);
             result = progres[resultNumber];
             resultText = Integer.toString(result);
-            System.out.print("Question: ");
+            System.out.print("Question:");
             for (int j = 0; j < progresSize; j++) {
                 if (j != resultNumber) {
                     System.out.print(" " + progres[j]);
