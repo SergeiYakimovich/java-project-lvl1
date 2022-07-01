@@ -11,12 +11,6 @@ public class Cli {
         System.out.println("Hello, " + str + "!");
         return str;
     }
-
-//    public static void bye(String str) {
-//        System.out.println("Bye, " + str + "!");
-//       System.out.println("Thanks for playing Brain Games!");
-//    }
-
     public static void showGamesList() {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -51,7 +45,6 @@ public class Cli {
                     default :
                 }
             }
-            // System.out.println("Wrong choice. Be attentive and try again, please.");
         } while (true);
     }
 
