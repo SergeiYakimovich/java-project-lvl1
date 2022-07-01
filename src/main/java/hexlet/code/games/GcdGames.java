@@ -37,14 +37,13 @@ public class GcdGames {
                 System.out.println("Correct!");
                 countCorrect++;
             } else {
-                System.out.println(text + " is wrong answer :(. Correct answer was " + resultText);
+                System.out.println("'" + text + "'" + " is wrong answer ;(. Correct answer was '" + resultText + "'.");
                 System.out.println("Let's try again, " + name + "!");
+                break;
             }
         }
         if (countCorrect == three) {
             System.out.println("Congratulations, " + name + "!");
-        } else {
-            System.out.println("Be more attractive, " + name + "!");
         }
     }
 

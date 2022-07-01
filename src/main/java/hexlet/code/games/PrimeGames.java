@@ -15,6 +15,7 @@ public class PrimeGames {
     }
     public static void prime(String name) {
         var text = "";
+        var resultText = "";
         final int three = 3;
         final int maxNumber = 100;
         int number;
@@ -25,6 +26,7 @@ public class PrimeGames {
         for (var i = 0; i < three; i++) {
             number = random.nextInt(maxNumber) + 2;
             isNumberPrime = isPrime(number);
+            resultText = isNumberPrime ? "yes" : "no";
             System.out.println("Question: " + number + " ");
             System.out.print("Your answer: ");
             text = Cli.getChoiceText();
@@ -32,13 +34,13 @@ public class PrimeGames {
                 System.out.println("Correct!");
                 countCorrect++;
             } else {
-                System.out.println("Wrong!");
+                System.out.println("'" + text + "'" + " is wrong answer ;(. Correct answer was '" + resultText + "'.");
+                System.out.println("Let's try again, " + name + "!");
+                break;
             }
         }
         if (countCorrect == three) {
             System.out.println("Congratulations, " + name + "!");
-        } else {
-            System.out.println("Be more attractive, " + name + "!");
         }
     }
 

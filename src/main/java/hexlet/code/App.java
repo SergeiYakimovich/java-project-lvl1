@@ -1,7 +1,7 @@
 package hexlet.code;
 class App {
     public static void main(String[] args) {
-        var name = "my guest"; // имя игрока
+        var name = ""; // имя игрока
         int chioceNumber; // выбор игрока
         final int three = 3;
         final int four = 4;
@@ -36,7 +36,7 @@ class App {
                 default : break;
             }
         } while (chioceNumber != 0);
-        Cli.bye(name);
+//        Cli.bye(name);
     }
 
 }

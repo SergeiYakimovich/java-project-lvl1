@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 public class Cli {
     public static String greeting() {
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner sc = new Scanner(System.in);
@@ -11,16 +12,16 @@ public class Cli {
         return str;
     }
 
-    public static void bye(String str) {
-        System.out.println("Bye, " + str + "!");
-        System.out.println("Thanks for playing Brain Games!");
-    }
+//    public static void bye(String str) {
+//        System.out.println("Bye, " + str + "!");
+//       System.out.println("Thanks for playing Brain Games!");
+//    }
 
     public static void showGamesList() {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
-        System.out.println("3 - Calculator");
+        System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
@@ -34,8 +35,8 @@ public class Cli {
         final int five = 5;
         final int six = 6;
         Scanner sc = new Scanner(System.in);
+        showGamesList();
         do {
-            showGamesList();
             String str = sc.next();
             str = str.trim();
             if (str.length() == 1) {
@@ -50,7 +51,7 @@ public class Cli {
                     default : break;
                 }
             }
-            System.out.println("Wrong choice. Be attentive and try again, please.");
+            // System.out.println("Wrong choice. Be attentive and try again, please.");
         } while (true);
     }
 

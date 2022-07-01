@@ -5,6 +5,7 @@ public class EvenGames {
 
     public static void even(String name) {
         var text = "";
+        var resultText = "";
         final int three = 3;
         final int maxNumber = 1000;
         int number;
@@ -15,20 +16,21 @@ public class EvenGames {
         for (var i = 0; i < three; i++) {
             number = random.nextInt(maxNumber);
             isNumberEven = number % 2 == 0 ? true : false;
+            resultText = isNumberEven ? "yes" : "no";
             System.out.println("Question: " + number + " ");
             System.out.print("Your answer: ");
             text = Cli.getChoiceText();
-            if ((text.equals("yes") && isNumberEven) || (text.equals("no") && !isNumberEven)) {
+            if ((text.equals(resultText) && isNumberEven) || (text.equals(resultText) && !isNumberEven)) {
                 System.out.println("Correct!");
                 countCorrect++;
             } else {
-                System.out.println("Wrong!");
+                System.out.println("'" + text + "'" + " is wrong answer ;(. Correct answer was '" + resultText + "'.");
+                System.out.println("Let's try again, " + name + "!");
+                break;
             }
         }
         if (countCorrect == three) {
             System.out.println("Congratulations, " + name + "!");
-        } else {
-            System.out.println("Be more attractive, " + name + "!");
         }
     }
 
