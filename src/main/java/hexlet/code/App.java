@@ -35,7 +35,7 @@ class App {
                     break;
                 default : break;
             }
-        } while (chioceNumber == 10);
+        } while (chioceNumber != 0);
 //        Cli.bye(name);
     }
 
