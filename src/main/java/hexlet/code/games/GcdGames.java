@@ -14,16 +14,21 @@ public class GcdGames {
         }
         return result;
     }
-    public static void gcd() {
+    public static String[] gcd() {
 
         final int maxNumber = 99;
         final Random random = new Random();
-        int number1 = random.nextInt(maxNumber) + 1;
-        int number2 = random.nextInt(maxNumber) + 1;
-        int result = nod(number1, number2);
 
-        App.setResultText(Integer.toString(result));
-        App.setQuestionText(Integer.toString(number1) + " " + Integer.toString(number2));
+        String[] resultText = new String[App.GAMESCOUNT * 2];
+
+        for (int i = 0; i < App.GAMESCOUNT; i++) {
+            int number1 = random.nextInt(maxNumber) + 1;
+            int number2 = random.nextInt(maxNumber) + 1;
+            int result = nod(number1, number2);
+            resultText[2 * i] = Integer.toString(number1) + " " + Integer.toString(number2);
+            resultText[2 * i + 1] = Integer.toString(result);
+        }
+        return resultText;
     }
 
 }

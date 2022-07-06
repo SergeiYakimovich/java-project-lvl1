@@ -13,14 +13,19 @@ public class PrimeGames {
         }
         return result;
     }
-    public static void prime() {
+    public static String[] prime() {
 
         final int maxNumber = 100;
         final Random random = new Random();
-        int number = random.nextInt(maxNumber) + 2;
 
-        App.setResultText(isPrime(number) ? "yes" : "no");
-        App.setQuestionText(Integer.toString(number));
+        String[] resultText = new String[App.GAMESCOUNT * 2];
+
+        for (int i = 0; i < App.GAMESCOUNT; i++) {
+            int number = random.nextInt(maxNumber) + 2;
+            resultText[2 * i] = Integer.toString(number);
+            resultText[2 * i + 1] = isPrime(number) ? "yes" : "no";
+        }
+        return resultText;
 
     }
 
