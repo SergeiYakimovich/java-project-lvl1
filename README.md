@@ -3,6 +3,8 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
+![Java CI](https://github.com/hexlet-boilerplates/java-package/workflows/Java%20CI/badge.svg)
+
 ###  Asciinema
 [![asciicast](https://asciinema.org/a/XkGuRI0Fzv7k0UuNESelaBjq5.svg)](https://asciinema.org/a/XkGuRI0Fzv7k0UuNESelaBjq5)
 
