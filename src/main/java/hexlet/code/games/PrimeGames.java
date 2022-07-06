@@ -13,35 +13,15 @@ public class PrimeGames {
         }
         return result;
     }
-    public static void prime(String name) {
-        var text = "";
-        var resultText = "";
-        final int three = 3;
+    public static void prime() {
+
         final int maxNumber = 100;
-        int number;
-        int countCorrect = 0;
-        boolean isNumberPrime;
         final Random random = new Random();
-        System.out.println("Answer 'yes' if the number is prime, otherwise answer 'no'.");
-        for (var i = 0; i < three; i++) {
-            number = random.nextInt(maxNumber) + 2;
-            isNumberPrime = isPrime(number);
-            resultText = isNumberPrime ? "yes" : "no";
-            System.out.println("Question: " + number + " ");
-            System.out.print("Your answer: ");
-            text = Cli.getChoiceText();
-            if ((text.equals("yes") && isNumberPrime) || (text.equals("no") && !isNumberPrime)) {
-                System.out.println("Correct!");
-                countCorrect++;
-            } else {
-                System.out.println("'" + text + "'" + " is wrong answer ;(. Correct answer was '" + resultText + "'.");
-                System.out.println("Let's try again, " + name + "!");
-                break;
-            }
-        }
-        if (countCorrect == three) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+        int number = random.nextInt(maxNumber) + 2;
+
+        App.setResultText(isPrime(number) ? "yes" : "no");
+        App.setQuestionText(Integer.toString(number));
+
     }
 
 }
