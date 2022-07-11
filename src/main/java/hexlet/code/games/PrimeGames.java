@@ -4,6 +4,9 @@ import java.util.Random;
 public class PrimeGames {
 
     public static boolean isPrime(int n) {
+        if (n < 2) {
+            return false;
+        }
         boolean result = true;
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
@@ -13,17 +16,16 @@ public class PrimeGames {
         }
         return result;
     }
-    public static String[] prime() {
+    public static String[][] prime() {
 
-        final int maxNumber = 100;
         final Random random = new Random();
 
-        String[] resultText = new String[App.GAMESCOUNT * 2];
+        String[][] resultText = new String[App.GAMES_COUNT][2];
 
-        for (int i = 0; i < App.GAMESCOUNT; i++) {
-            int number = random.nextInt(maxNumber) + 2;
-            resultText[2 * i] = Integer.toString(number);
-            resultText[2 * i + 1] = isPrime(number) ? "yes" : "no";
+        for (int i = 0; i < App.GAMES_COUNT; i++) {
+            int number = random.nextInt(App.MAX_NUMBER) + 2;
+            resultText[i][0] = Integer.toString(number);
+            resultText[i][1] = isPrime(number) ? "yes" : "no";
         }
         return resultText;
 

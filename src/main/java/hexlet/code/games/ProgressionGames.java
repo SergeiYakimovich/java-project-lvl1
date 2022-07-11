@@ -3,38 +3,36 @@ package hexlet.code;
 import java.util.Random;
 public class ProgressionGames {
 
-    public static String[] progression() {
+    public static String[][] progression() {
 
-        final int maxNumber = 100;
-        final int progresSize = 10;
         final Random random = new Random();
 
-        String[] resultText = new String[App.GAMESCOUNT * 2];
+        String[][] resultText = new String[App.GAMES_COUNT][2];
 
-        for (int i = 0; i < App.GAMESCOUNT; i++) {
-            int firstNumber = random.nextInt(maxNumber);
-            int addNumber = Math.abs(random.nextInt(maxNumber)) + 1;
-            var progres = new int[progresSize];
+        for (int i = 0; i < App.GAMES_COUNT; i++) {
+            int firstNumber = random.nextInt(App.MAX_NUMBER);
+            int addNumber = Math.abs(random.nextInt(App.MAX_NUMBER)) + 1;
+            var progres = new int[App.PROGRES_SIZE];
             progres[0] = firstNumber;
-            for (int j = 1; j < progresSize; j++) {
+            for (int j = 1; j < App.PROGRES_SIZE; j++) {
                 progres[j] = progres[j - 1] + addNumber;
             }
-            int resultNumber = random.nextInt(progresSize);
-            int result = progres[resultNumber];
+            int positionOfAbsentNumber = random.nextInt(App.PROGRES_SIZE);
+            int result = progres[positionOfAbsentNumber];
             String text = "";
-            for (int j = 0; j < progresSize; j++) {
-                if (j != resultNumber) {
+            for (int j = 0; j < App.PROGRES_SIZE; j++) {
+                if (j != positionOfAbsentNumber) {
                     text = text + progres[j];
                 } else {
                     text = text + "..";
                 }
-                if (j != progresSize - 1) {
+                if (j != App.PROGRES_SIZE - 1) {
                     text = text + " ";
                 }
             }
 
-            resultText[2 * i] = text;
-            resultText[2 * i + 1] = Integer.toString(result);
+            resultText[i][0] = text;
+            resultText[i][1] = Integer.toString(result);
         }
         return resultText;
     }

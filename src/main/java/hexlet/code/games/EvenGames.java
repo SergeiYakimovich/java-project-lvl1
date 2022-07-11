@@ -2,16 +2,16 @@ package hexlet.code;
 
 import java.util.Random;
 public class EvenGames {
-    public static String[] even() {
-        final int maxNumber = 1000;
+    public static String[][] even() {
+
         final Random random = new Random();
 
-        String[] resultText = new String[App.GAMESCOUNT * 2];
+        String[][] resultText = new String[App.GAMES_COUNT][2];
 
-        for (int i = 0; i < App.GAMESCOUNT; i++) {
-            int number = random.nextInt(maxNumber);
-            resultText[2 * i] = Integer.toString(number);
-            resultText[2 * i + 1] = number % 2 == 0 ? "yes" : "no";
+        for (int i = 0; i < App.GAMES_COUNT; i++) {
+            int number = random.nextInt(App.MAX_NUMBER);
+            resultText[i][0] = Integer.toString(number);
+            resultText[i][1] = number % 2 == 0 ? "yes" : "no";
         }
         return resultText;
     }
