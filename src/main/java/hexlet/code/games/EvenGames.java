@@ -1,19 +1,17 @@
 package hexlet.code;
 
-import java.util.Random;
-public class EvenGames {
-    public static String[][] even() {
+final class EvenGames extends Games {
+    EvenGames() {
+        setGameConditions("Answer 'yes' if the number is even, otherwise answer 'no'.");
+    }
+    @Override
+    public void prepare() {
 
-        final Random random = new Random();
-
-        String[][] resultText = new String[App.GAMES_COUNT][2];
-
-        for (int i = 0; i < App.GAMES_COUNT; i++) {
-            int number = random.nextInt(App.MAX_NUMBER);
-            resultText[i][0] = Integer.toString(number);
-            resultText[i][1] = number % 2 == 0 ? "yes" : "no";
+        for (int i = 0; i < GAMES_COUNT; i++) {
+            int number = getRandom(MAX_NUMBER);
+            setResultText(i, 0, Integer.toString(number));
+            setResultText(i, 1, number % 2 == 0 ? "yes" : "no");
         }
-        return resultText;
     }
 
 }

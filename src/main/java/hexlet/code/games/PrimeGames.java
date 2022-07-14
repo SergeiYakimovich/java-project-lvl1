@@ -1,7 +1,20 @@
 package hexlet.code;
 
-import java.util.Random;
-public class PrimeGames {
+final class PrimeGames extends Games {
+
+    PrimeGames() {
+        setGameConditions("Answer 'yes' if the number is prime, otherwise answer 'no'.");
+    }
+
+    @Override
+    public void prepare() {
+
+        for (int i = 0; i < GAMES_COUNT; i++) {
+            int number = getRandom(MAX_NUMBER) + 2;
+            setResultText(i, 0, Integer.toString(number));
+            setResultText(i, 1, isPrime(number) ? "yes" : "no");
+        }
+    }
 
     public static boolean isPrime(int n) {
         if (n < 2) {
@@ -15,20 +28,6 @@ public class PrimeGames {
             }
         }
         return result;
-    }
-    public static String[][] prime() {
-
-        final Random random = new Random();
-
-        String[][] resultText = new String[App.GAMES_COUNT][2];
-
-        for (int i = 0; i < App.GAMES_COUNT; i++) {
-            int number = random.nextInt(App.MAX_NUMBER) + 2;
-            resultText[i][0] = Integer.toString(number);
-            resultText[i][1] = isPrime(number) ? "yes" : "no";
-        }
-        return resultText;
-
     }
 
 }
