@@ -10,6 +10,7 @@ public class App {
     public static final int GCD_GAME_NUMBER = 4;
     public static final int PROGRESSION_GAME_NUMBER = 5;
     public static final int PRIME_GAME_NUMBER = 6;
+
     public static void main(String[] args) {
 
         System.out.println("Please enter the game number and press Enter.");
@@ -33,29 +34,38 @@ public class App {
             return;
         }
 
-        Games newGame;
         switch (choiceNumber) {
-            case GREETING_NUMBER :
-                Games.greeting();
-                return;
+            case GREETING_NUMBER:
+                greeting();
+                break;
             case EVEN_GAME_NUMBER:
-                newGame = new EvenGames();
+                EvenGames.even();
                 break;
             case CALCULATOR_GAME_NUMBER:
-                newGame = new CalculatorGames();
+                CalculatorGames.calculator();
                 break;
             case GCD_GAME_NUMBER:
-                newGame = new GcdGames();
+                GcdGames.gcd();
                 break;
             case PROGRESSION_GAME_NUMBER:
-                newGame = new ProgressionGames();
+                ProgressionGames.progression();
                 break;
             case PRIME_GAME_NUMBER:
-                newGame = new PrimeGames();
+                PrimeGames.prime();
                 break;
-            default : return;
+            default : break;
         }
-        newGame.play();
+
+    }
+
+    public static String greeting() {
+        System.out.println();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        System.out.println("Hello, " + str + "!");
+        return str;
     }
 
 }

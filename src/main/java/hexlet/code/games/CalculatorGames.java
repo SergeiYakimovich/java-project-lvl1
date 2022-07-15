@@ -1,19 +1,21 @@
 package hexlet.code;
 
-final class CalculatorGames extends Games {
+import java.util.Random;
+public class CalculatorGames {
 
-    CalculatorGames() {
-        setGameConditions("What is the result of the expression?");
-    }
-    @Override
-    public void prepare() {
+    public static void calculator() {
 
         final int signNumber = 3;
+        final Random random = new Random();
+        String[][] resultText = new String[Engine.GAMES_COUNT][2];
+        String name = App.greeting();
 
-        for (int i = 0; i < GAMES_COUNT; i++) {
-            int number1 = getRandom(MAX_NUMBER);
-            int number2 = getRandom(MAX_NUMBER);
-            int sign = getRandom(signNumber);
+        System.out.println("What is the result of the expression?");
+        for (int i = 0; i < Engine.GAMES_COUNT; i++) {
+
+            int number1 = random.nextInt(Engine.MAX_NUMBER);
+            int number2 = random.nextInt(Engine.MAX_NUMBER);
+            int sign = random.nextInt(signNumber);
             String signText = "";
             int result = 0;
             switch (sign) {
@@ -31,9 +33,10 @@ final class CalculatorGames extends Games {
                     break;
                 default : break;
             }
-            setResultText(i, 0, Integer.toString(number1) + signText + Integer.toString(number2));
-            setResultText(i, 1, Integer.toString(result));
+            resultText[i][0] = Integer.toString(number1) + signText + Integer.toString(number2);
+            resultText[i][1] = Integer.toString(result);
         }
+        Engine.playGame(name, resultText);
     }
 
 }

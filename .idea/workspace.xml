@@ -141,7 +141,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.app [run]">
+  <component name="RunManager" selected="Gradle.app [installDist]">
     <configuration name="app [checkstyleMain]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -249,9 +249,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.app [installDist]" />
         <item itemvalue="Gradle.app [run]" />
         <item itemvalue="Gradle.app [checkstyleMain]" />
-        <item itemvalue="Gradle.app [installDist]" />
         <item itemvalue="Gradle.app [test]" />
         <item itemvalue="Gradle.app [checkstyleTest]" />
       </list>

@@ -1,20 +1,7 @@
 package hexlet.code;
 
-final class GcdGames extends Games {
-    GcdGames() {
-        setGameConditions("Find the greatest common divisor of given numbers.");
-    }
-    @Override
-    public void prepare()  {
-
-        for (int i = 0; i < GAMES_COUNT; i++) {
-            int number1 = getRandom(MAX_NUMBER) + 1;
-            int number2 = getRandom(MAX_NUMBER) + 1;
-            int result = nod(number1, number2);
-            setResultText(i, 0, Integer.toString(number1) + " " + Integer.toString(number2));
-            setResultText(i, 1, Integer.toString(result));
-        }
-    }
+import java.util.Random;
+public class GcdGames {
 
     public static int nod(int n1, int n2) { // greatest common divisor
         int result = 1;
@@ -26,6 +13,22 @@ final class GcdGames extends Games {
             }
         }
         return result;
+    }
+    public static void gcd() {
+
+        final Random random = new Random();
+        String[][] resultText = new String[Engine.GAMES_COUNT][2];
+        String name = App.greeting();
+
+        System.out.println("Find the greatest common divisor of given numbers.");
+        for (int i = 0; i < Engine.GAMES_COUNT; i++) {
+            int number1 = random.nextInt(Engine.MAX_NUMBER) + 1;
+            int number2 = random.nextInt(Engine.MAX_NUMBER) + 1;
+            int result = nod(number1, number2);
+            resultText[i][0] = Integer.toString(number1) + " " + Integer.toString(number2);
+            resultText[i][1] = Integer.toString(result);
+        }
+        Engine.playGame(name, resultText);
     }
 
 }
