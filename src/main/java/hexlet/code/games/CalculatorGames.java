@@ -1,42 +1,33 @@
 package hexlet.code;
-
-import java.util.Random;
 public class CalculatorGames {
-
+    public static final int NUMBER_OF_SIGNS = 3;
+    public static final String[] SIGN_TEXT = {" + ", " - ", " * "};
     public static void calculator() {
 
-        final int signNumber = 3;
-        final Random random = new Random();
         String[][] resultText = new String[Engine.GAMES_COUNT][2];
-        String name = App.greeting();
+        String rulesText = "What is the result of the expression?";
 
-        System.out.println("What is the result of the expression?");
         for (int i = 0; i < Engine.GAMES_COUNT; i++) {
-
-            int number1 = random.nextInt(Engine.MAX_NUMBER);
-            int number2 = random.nextInt(Engine.MAX_NUMBER);
-            int sign = random.nextInt(signNumber);
-            String signText = "";
+            int number1 = Engine.getRandom(Engine.MAX_NUMBER);
+            int number2 = Engine.getRandom(Engine.MAX_NUMBER);
+            int signNumber = Engine.getRandom(NUMBER_OF_SIGNS);
             int result = 0;
-            switch (sign) {
+            switch (signNumber) {
                 case 0 :
-                    signText = " + ";
                     result = number1 + number2;
                     break;
                 case 1 :
-                    signText = " - ";
                     result = number1 - number2;
                     break;
                 case 2 :
-                    signText = " * ";
                     result = number1 * number2;
                     break;
                 default : break;
             }
-            resultText[i][0] = Integer.toString(number1) + signText + Integer.toString(number2);
+            resultText[i][0] = Integer.toString(number1) + SIGN_TEXT[signNumber] + Integer.toString(number2);
             resultText[i][1] = Integer.toString(result);
         }
-        Engine.playGame(name, resultText);
+        Engine.playGame(rulesText, resultText);
     }
 
 }

@@ -1,12 +1,15 @@
 package hexlet.code;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-
     public static final int GAMES_COUNT = 3;
     public static final int MAX_NUMBER = 100;
-    public static void playGame(String name, String[][] resultGames) {
+    public static void playGame(String rulesText, String[][] resultGames) {
+
+        String name = App.greeting();
+        System.out.println(rulesText);
 
         int countCorrect = 0;
         for (var i = 0; i < GAMES_COUNT; i++) {
@@ -28,6 +31,10 @@ public class Engine {
         }
     }
 
+    public static int getRandom(int max) {
+        final Random random = new Random();
+        return random.nextInt(max);
+    }
     public static String getChoiceText() {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();

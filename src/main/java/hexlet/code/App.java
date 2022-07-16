@@ -30,10 +30,6 @@ public class App {
         }
         int choiceNumber = Character.getNumericValue(str.charAt(0));
 
-        if (choiceNumber == EXIT_NUMBER) {
-            return;
-        }
-
         switch (choiceNumber) {
             case GREETING_NUMBER:
                 greeting();
@@ -57,7 +53,6 @@ public class App {
         }
 
     }
-
     public static String greeting() {
         System.out.println();
         System.out.println("Welcome to the Brain Games!");
